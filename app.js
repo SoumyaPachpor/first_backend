@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use('/users', userRouter);
-app.use('/owner', ownerRouter);
+app.use('/owners', ownerRouter);
 app.use('/products', productRouter);
 
 app.get('/', (req, res)=>{
@@ -23,5 +23,5 @@ app.get('/', (req, res)=>{
 })
 
 app.listen(port, () => {
-  console.log("Server is running on http://localhost:" + port);
+  // console.log("Server is running on http://localhost:" + port);
 });

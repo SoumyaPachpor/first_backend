@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
-
-mongoose
-.connect("mongodb://127.0.0.1:27017/e-comerce")
-.then(()=>{
-    console.log("Connected");
-})
-.catch((err)=>{
-    console.log(err);
-})
-
+const dbgr = require('debug')('development:mongoose'); 
+const config = require('config')
+mongoose.connect(`${config.get("MONGODB_URI")}/e-commerce`)
+  .then(() => {
+    dbgr("Connected to MongoDB");
+  })
+  .catch((err) => {
+    dbgr(err);
+  });
 
 module.exports = mongoose.connection;

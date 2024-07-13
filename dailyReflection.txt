@@ -1,0 +1,10 @@
+7/13/2024
+npm i debug
+downloaded this module
+and then required it in the mongoose-connection.js
+
+const dbgr = require('debug')('development:mongoose'); 
+damn i literally was finding the mistake and the mistake was that i just add an extra space in the name space
+
+
+npm i config
