@@ -18,6 +18,10 @@ app.use('/users', userRouter);
 app.use('/owner', ownerRouter);
 app.use('/products', productRouter);
 
+app.get('/', (req, res)=>{
+  res.send("this is good")
+})
+
 app.listen(port, () => {
   console.log("Server is running on http://localhost:" + port);
 });
